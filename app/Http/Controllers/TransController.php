@@ -12,7 +12,6 @@ class TransController extends Controller
     public function index()
     {
         $trans = Trans::latest()->get();
-
         $data = [
             'trans' => $trans,
         ];
@@ -24,7 +23,6 @@ class TransController extends Controller
     {
         $cust = Customers::latest()->get();
         $pack = Packet::latest()->get();
-
         $data = [
             'cust' => $cust,
             'pack' => $pack,
@@ -41,13 +39,10 @@ class TransController extends Controller
             'qty'     => 'required|numeric|min:1',
         ]);
 
-        // Cari data paket yang dipilih berdasarkan id_pack
         $packet = Packet::findOrFail($request->id_pack);
 
-        // Hitung total berdasarkan harga paket dan qty
         $total = $packet->price * $request->qty;
 
-        // Simpan transaksi ke database
         $trans = Trans::create([
             'id_cust' => $request->id_cust,
             'id_pack' => $request->id_pack,
@@ -65,8 +60,6 @@ class TransController extends Controller
     public function delete($id)
     {
         Trans::where("id", $id)->delete();
-
-
         return redirect('/backend/transaction')->with('message', 'Data Berhasil Dihapus');
     }
 }

@@ -51,9 +51,7 @@
                     @endforeach
                 </table>
             </div>
-            <!-- /.card-body -->
         </div>
-        <!-- /.card -->
     </div>
-    </div>
+</div>
 </x-component.backend.layouts>

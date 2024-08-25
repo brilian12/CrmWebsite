@@ -57,21 +57,6 @@ Route::prefix('backend')->group(function () {
         return view('backend.customers.insert');
     });
 
-
-    //Packet
-    //Transaction
-    // Route::get('/inserttransaction', function () {
-    //     return view('backend.transaction.insert');
-    // });
-
-    // Route::get('/detailcustomer', function () {
-    //     return view('backend.customers.detail');
-    // });
-
-    // Route::get('/updatecustomer/{id}', function () {
-    //     return view('backend.customers.update');
-    // });
-
     //Customer
     Route::get("/detailcust/{id}", [CustomersController::class, "detail"]);
     Route::get('/widget', [CustomersController::class, "index"]);

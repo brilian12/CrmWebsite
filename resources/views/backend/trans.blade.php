@@ -24,7 +24,6 @@
                     </div>
                 </div>
             </div>
-            <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                     <thead>
@@ -54,9 +53,7 @@
                     @endforeach
                 </table>
             </div>
-            <!-- /.card-body -->
         </div>
-        <!-- /.card -->
     </div>
-    </div>
+</div>
 </x-component.backend.layouts>

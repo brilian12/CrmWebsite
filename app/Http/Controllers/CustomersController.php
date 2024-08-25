@@ -12,17 +12,10 @@ class CustomersController extends Controller
     public function index()
     {
         $customers = Customers::latest()->get();
-        // $webport = Portofolio::where("category_id", 2)->count();
-        // $services = Services::latest()->get();
-        // $contact = Contact::latest()->get();
-
         $data = [
             'customers' => $customers,
-            // 'services' => $services,
-            // 'contact' => $contact,
         ];
 
-        // mengirim data pegawai ke view index
         return view("/backend/widget", $data);
     }
 
@@ -34,7 +27,6 @@ class CustomersController extends Controller
             $customers = Customers::paginate(5);
         }
 
-        // mengirim data pegawai ke view index
         return view("/backend/widget", ['customers' => $customers]);
     }
 
@@ -43,13 +35,11 @@ class CustomersController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'string|required|max:20',
             'email' => 'string|required|email|unique:users|max:255',
-            // 'alamat' => 'string|required|max:100',
             'no_hp' => 'string|required|max:12',
             'password' => [
                 'required',
                 'min:8',
                 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%@]).*$/',
-                // 'confirmed'
             ]
         ]);
 
@@ -66,10 +56,8 @@ class CustomersController extends Controller
 
 
         if ($customers) {
-            //redirect dengan pesan sukses
             return redirect('/backend/widget')->with('message', 'Data Berhasil Ditambahkan');
         } else {
-            //redirect dengan pesan error
             return redirect()->route('/backend/insertcustomer')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
@@ -113,8 +101,6 @@ class CustomersController extends Controller
     public function delete($id)
     {
         Customers::where("id", $id)->delete();
-
-
         return redirect('/backend/widget')->with('message', 'Data Berhasil Dihapus');
     }
 }

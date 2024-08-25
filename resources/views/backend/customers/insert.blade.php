@@ -8,7 +8,6 @@
                     <a class="text-decoration-none" href="{{ url('/backend/dashboard') }}">
                         <i class="fas fa-arrow-left fs-4 d-lg-flex justify-content-lg-start"></i>
                     </a>
-
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
