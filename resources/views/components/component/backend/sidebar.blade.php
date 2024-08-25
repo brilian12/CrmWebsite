@@ -72,7 +72,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <form action="{{ url('/logout') }}" method="POST" id="logout-form">
+                    <form action="{{ url('/backend/logout') }}" method="POST" id="logout-form">
                         @csrf
                         <button type="submit" class="nav-link btn btn-danger">
                             <i class="nav-icon fas fa-sign-out-alt"></i>

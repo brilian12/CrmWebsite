@@ -32,7 +32,7 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         // Redirect ke halaman login atau halaman lain yang diinginkan
-        return redirect('/backend/login')->with('success', 'You have been logged out successfully');
+        return redirect('/backend')->with('success', 'You have been logged out successfully');
     }
 
     public function create(Request $request)

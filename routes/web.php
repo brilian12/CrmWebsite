@@ -27,12 +27,14 @@ Route::get('adminregis/', function () {
 
 Route::post("register/", [AuthController::class, "create"]);
 
-Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+
 
 Route::prefix('backend')->group(function () {
     Route::get('/', function () {
         return view('login');
     });
+
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
     Route::get('/dashboard', function () {
         return view('backend.dashboard');

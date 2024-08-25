@@ -20,7 +20,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Login</b>CRM</a>
+            <a href="../../index2.html"><b>Login</b></a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
